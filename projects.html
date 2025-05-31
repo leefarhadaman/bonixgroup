@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bonix Construction Projects - Explore our portfolio of residential, commercial, and luxury projects.">
+    <title>Projects - Bonix Construction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="logo">
+                <img src="logo.png" alt="Bonix Logo">
+            </div>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Bonix Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+                <a href="services.html" class="dropdown-toggle">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="construction.html">Construction</a></li>
+                    <li><a href="architecture.html">Architecture</a></li>
+                    <li><a href="interior-design.html">Interior Design</a></li>
+                    <li><a href="renovation.html">Renovation</a></li>
+                    <li><a href="project-management.html">Project Management</a></li>
+                    <li><a href="consulting.html">Consulting</a></li>
+                </ul>
+            </li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html#appointment" class="appointment-btn">Book Appointment</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero projects-hero">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c')">
+            <div class="hero-content">
+                <h1>Our Projects</h1>
+                <p>Showcasing our expertise in innovative construction.</p>
+                <a href="gallery.html" class="cta-btn">Explore Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Filter -->
+    <section class="project-filter animate">
+        <h2 class="animate-text">Filter Projects</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active animate-text" data-filter="all">All</button>
+            <button class="filter-btn animate-text" data-filter="residential">Residential</button>
+            <button class="filter-btn animate-text" data-filter="commercial">Commercial</button>
+            <button class="filter-btn animate-text" data-filter="luxury">Luxury</button>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="projects animate">
+        <div class="project-gallery">
+            <div class="project-item residential">
+                <img src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db" alt="Modern Residence">
+                <div class="overlay">
+                    <h3>Modern Residence</h3>
+                    <p>A sustainable home with smart technology, completed in 2023.</p>
+                    <a href="gallery.html" class="project-btn">View Details</a>
+                </div>
+            </div>
+            <div class="project-item commercial">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Commercial Complex">
+                <div class="overlay">
+                    <h3>Commercial Complex</h3>
+                    <p>State-of-the-art office space delivered in 2022.</p>
+                    <a href="gallery.html" class="project-btn">View Details</a>
+                </div>
+            </div>
+            <div class="project-item luxury">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Villa">
+                <div class="overlay">
+                    <h3>Luxury Villa</h3>
+                    <p>Bespoke villa blending luxury and functionality.</p>
+                    <a href="gallery.html" class="project-btn">View Details</a>
+                </div>
+            </div>
+            <div class="project-item residential">
+                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b" alt="Urban Apartment">
+                <div class="overlay">
+                    <h3>Urban Apartment</h3>
+                    <p>Modern living spaces completed in 2021.</p>
+                    <a href="gallery.html" class="project-btn">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Timeline -->
+    <section class="project-timeline animate">
+        <h2 class="animate-text">Project Milestones</h2>
+        <div class="timeline">
+            <div class="timeline-item animate-text">
+                <h3>2018</h3>
+                <p>Completed our first eco-friendly residential project.</p>
+            </div>
+            <div class="timeline-item animate-text">
+                <h3>2020</h3>
+                <p>Delivered a landmark commercial building in downtown.</p>
+            </div>
+            <div class="timeline-item animate-text">
+                <h3>2023</h3>
+                <p>Completed 100 luxury projects, earning global recognition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner animate">
+        <h2 class="animate-text">See Your Project Here</h2>
+        <p class="animate-text">Let’s bring your vision to life.</p>
+        <a href="contact.html#appointment" class="cta-btn animate-text">Get a Quote</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bonix</h3>
+                <p>Building dreams with quality and precision since 2010.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@bonix.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Address: 123 Builder St, City, Country</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Bonix Construction. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
