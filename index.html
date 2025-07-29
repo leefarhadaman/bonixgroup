@@ -4,282 +4,527 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bonix Construction - Expert construction, architecture, and design solutions.">
-    <title>Bonix - Construction & Builders</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Bonix - Modern Construction & Builders</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/modern-styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader">
-            <div class="logo">
-                <img src="logo.png" alt="Bonix Logo">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="assets/images/logo.png" alt="Bonix Logo" class="loading-img">
+                <div class="loading-text">Bonix</div>
             </div>
-            <div class="spinner"></div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
         </div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Bonix Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="dropdown">
-                <a href="services.html" class="dropdown-toggle">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="construction.html">Construction</a></li>
-                    <li><a href="architecture.html">Architecture</a></li>
-                    <li><a href="interior-design.html">Interior Design</a></li>
-                    <li><a href="renovation.html">Renovation</a></li>
-                    <li><a href="project-management.html">Project Management</a></li>
-                    <li><a href="consulting.html">Consulting</a></li>
-                </ul>
-            </li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="contact.html#appointment" class="appointment-btn">Book Appointment</a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-slider">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')">
-                <div class="hero-content">
-                    <h1>Build Your Future with Bonix</h1>
-                    <p>Expert construction and architectural solutions for your dream projects.</p>
-                    <a href="contact.html#appointment" class="cta-btn">Get a Quote</a>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-modern" id="home">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <div class="hero-slider">
+                    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
+                    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
+                    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db')">
-                <div class="hero-content">
-                    <h1>Transform Your Space</h1>
-                    <p>Innovative designs and quality craftsmanship.</p>
-                    <a href="services.html" class="cta-btn">Explore Services</a>
+            
+            <div class="container">
+                <div class="hero-content-modern">
+                    <div class="hero-badge" data-aos="fade-up">
+                        <i class="fas fa-award"></i>
+                        <span>15+ Years of Excellence</span>
+                    </div>
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                        Building Tomorrow's
+                        <span class="highlight">Dreams Today</span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                        Transform your vision into reality with our expert construction, 
+                        architecture, and design solutions that stand the test of time.
+                    </p>
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
+                        <a href="#services" class="btn btn-primary btn-lg">
+                            <i class="fas fa-rocket"></i>
+                            Explore Services
+                        </a>
+                        <a href="#projects" class="btn btn-outline btn-lg">
+                            <i class="fas fa-play"></i>
+                            View Projects
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
-                <div class="hero-content">
-                    <h1>Crafting Excellence</h1>
-                    <p>Premium construction for lasting impact.</p>
-                    <a href="projects.html" class="cta-btn">View Projects</a>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-modern" id="services">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <div class="section-badge">Our Services</div>
+                    <h2 class="section-title">Comprehensive Construction Solutions</h2>
+                    <p class="section-subtitle">
+                        From concept to completion, we deliver exceptional results across all construction disciplines
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="service-title">Construction</h3>
+                        <p class="service-description">
+                            Complete construction services from residential to commercial projects with quality craftsmanship.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Residential Construction</li>
+                            <li><i class="fas fa-check"></i> Commercial Buildings</li>
+                            <li><i class="fas fa-check"></i> Industrial Projects</li>
+                        </ul>
+                        <a href="#" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-badge">Popular</div>
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h3 class="service-title">Architecture</h3>
+                        <p class="service-description">
+                            Innovative architectural designs that blend functionality with aesthetic excellence.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Architectural Design</li>
+                            <li><i class="fas fa-check"></i> 3D Visualization</li>
+                            <li><i class="fas fa-check"></i> Planning & Permits</li>
+                        </ul>
+                        <a href="#" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="service-title">Interior Design</h3>
+                        <p class="service-description">
+                            Transform spaces with our creative interior design solutions that reflect your style.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Space Planning</li>
+                            <li><i class="fas fa-check"></i> Furniture Selection</li>
+                            <li><i class="fas fa-check"></i> Color Consultation</li>
+                        </ul>
+                        <a href="#" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="service-title">Renovation</h3>
+                        <p class="service-description">
+                            Breathe new life into existing structures with our comprehensive renovation services.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Home Renovation</li>
+                            <li><i class="fas fa-check"></i> Office Remodeling</li>
+                            <li><i class="fas fa-check"></i> Restoration Services</li>
+                        </ul>
+                        <a href="#" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3 class="service-title">Project Management</h3>
+                        <p class="service-description">
+                            Expert project management ensuring timely delivery and budget compliance.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Timeline Management</li>
+                            <li><i class="fas fa-check"></i> Budget Control</li>
+                            <li><i class="fas fa-check"></i> Quality Assurance</li>
+                        </ul>
+                        <a href="#" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="service-title">Consulting</h3>
+                        <p class="service-description">
+                            Professional consulting services to guide your construction and design decisions.
+                        </p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Design Consultation</li>
+                            <li><i class="fas fa-check"></i> Cost Estimation</li>
+                            <li><i class="fas fa-check"></i> Technical Advisory</li>
+                        </ul>
+                        <a href="#" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="slider-nav"></div>
-    </section>
-    
-    <!-- Welcome Section -->
-    <section class="welcome animate">
-        <div class="welcome-overlay"></div>
-        <div class="welcome-content">
-            <h2 class="animate-text">Welcome to Bonix Construction</h2>
-            <p class="animate-text">With over a decade of excellence, we transform visions into reality through innovative construction, architecture, and design. Our team is dedicated to delivering projects that inspire and endure.</p>
-            <div class="welcome-buttons">
-                <a href="about.html" class="welcome-btn animate-text">About Us</a>
-                <a href="contact.html#appointment" class="welcome-btn secondary animate-text">Get a Quote</a>
-            </div>
-        </div>
-        <img src="https://images.unsplash.com/photo-1543269865-0a740d43b90c" alt="Construction Team" class="welcome-img animate-img">
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="stats animate">
-        <h2 class="animate-text">Our Achievements</h2>
-        <div class="stats-grid">
-            <div class="stat-item animate-text">
-                <h3>500+</h3>
-                <p>Projects Completed</p>
-            </div>
-            <div class="stat-item animate-text">
-                <h3>15+</h3>
-                <p>Years of Experience</p>
-            </div>
-            <div class="stat-item animate-text">
-                <h3>100%</h3>
-                <p>Client Satisfaction</p>
-            </div>
-            <div class="stat-item animate-text">
-                <h3>50+</h3>
-                <p>Awards Won</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-overview animate">
-        <h2 class="animate-text">Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Construction">
-                <h3>Construction</h3>
-                <p>High-quality construction for residential and commercial projects.</p>
-                <a href="construction.html" class="card-btn">Learn More</a>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Architecture">
-                <h3>Architecture</h3>
-                <p>Creative architectural designs tailored to your needs.</p>
-                <a href="architecture.html" class="card-btn">Learn More</a>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Interior Design">
-                <h3>Interior Design</h3>
-                <p>Bespoke interiors to elevate your living spaces.</p>
-                <a href="interior-design.html" class="card-btn">Learn More</a>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1618221710640-c0eaaa2adb49" alt="Renovation">
-                <h3>Renovation</h3>
-                <p>Transform existing spaces with modern upgrades.</p>
-                <a href="renovation.html" class="card-btn">Learn More</a>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Project Management">
-                <h3>Project Management</h3>
-                <p>Seamless project execution from start to finish.</p>
-                <a href="project-management.html" class="card-btn">Learn More</a>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Consulting">
-                <h3>Consulting</h3>
-                <p>Expert advice for your construction and design projects.</p>
-                <a href="consulting.html" class="card-btn">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials animate">
-        <h2 class="animate-text">What Our Clients Say</h2>
-        <div class="testimonial-carousel">
-            <div class="testimonial">
-                <p>"Bonix turned our dream home into reality with exceptional quality and attention to detail."</p>
-                <h4>Jane Doe</h4>
-                <span>Homeowner</span>
-            </div>
-            <div class="testimonial">
-                <p>"Their project management was flawless, delivering our office space on time and within budget."</p>
-                <h4>John Smith</h4>
-                <span>Business Owner</span>
-            </div>
-            <div class="testimonial">
-                <p>"The architectural design by Bonix was innovative and perfectly suited our needs."</p>
-                <h4>Emily Brown</h4>
-                <span>Architect</span>
-            </div>
-            <div class="testimonial">
-                <p>"Bonix’s team was professional and delivered beyond our expectations."</p>
-                <h4>Michael Lee</h4>
-                <span>Property Developer</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Showcase -->
-    <section class="projects animate">
-        <h2 class="animate-text">Our Projects</h2>
-        <div class="project-gallery">
-            <div class="project-item">
-                <img src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db" alt="Modern Residence">
-                <div class="overlay">
-                    <h3>Modern Residence</h3>
-                    <p>A sleek, sustainable home completed in 2023.</p>
-                    <a href="gallery.html" class="project-btn">View Details</a>
+        <!-- About Section -->
+        <section class="about-modern" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <div class="section-badge">About Bonix</div>
+                        <h2 class="section-title">Building Excellence Since 2010</h2>
+                        <p class="about-description">
+                            For over a decade, Bonix Construction has been at the forefront of innovative building solutions. 
+                            We combine traditional craftsmanship with modern technology to deliver exceptional results that 
+                            exceed our clients' expectations.
+                        </p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Quality Assurance</h4>
+                                    <p>Rigorous quality control at every stage of construction</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Timely Delivery</h4>
+                                    <p>Committed to meeting deadlines without compromising quality</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Expert Team</h4>
+                                    <p>Skilled professionals with years of industry experience</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-actions">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-phone"></i>
+                                Contact Us
+                            </a>
+                            <a href="#projects" class="btn btn-outline">
+                                <i class="fas fa-eye"></i>
+                                View Portfolio
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual" data-aos="fade-left">
+                        <div class="about-image-container">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80" alt="Construction Team" class="about-image">
+                            <div class="about-overlay">
+                                <div class="play-button" id="playVideo">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-badge">
+                            <div class="badge-number">15+</div>
+                            <div class="badge-text">Years of Excellence</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-item">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Commercial Complex">
-                <div class="overlay">
-                    <h3>Commercial Complex</h3>
-                    <p>State-of-the-art office space delivered in 2022.</p>
-                    <a href="gallery.html" class="project-btn">View Details</a>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-modern" id="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <div class="section-badge">Our Work</div>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">
+                        Explore our portfolio of successful construction and design projects
+                    </p>
+                </div>
+
+                <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="residential">Residential</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="renovation">Renovation</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80" alt="Modern Villa">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <button class="project-btn" data-action="view">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="project-btn" data-action="expand">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Residential</div>
+                            <h3 class="project-title">Modern Villa Project</h3>
+                            <p class="project-description">
+                                Luxurious modern villa with contemporary design and sustainable features.
+                            </p>
+                            <div class="project-meta">
+                                <span class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Beverly Hills, CA
+                                </span>
+                                <span class="project-date">2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="commercial" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Office Complex">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <button class="project-btn" data-action="view">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="project-btn" data-action="expand">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Commercial</div>
+                            <h3 class="project-title">Corporate Office Complex</h3>
+                            <p class="project-description">
+                                State-of-the-art office building with modern amenities and eco-friendly design.
+                            </p>
+                            <div class="project-meta">
+                                <span class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Downtown LA
+                                </span>
+                                <span class="project-date">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="renovation" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Historic Renovation">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <button class="project-btn" data-action="view">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="project-btn" data-action="expand">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Renovation</div>
+                            <h3 class="project-title">Historic Building Restoration</h3>
+                            <p class="project-description">
+                                Careful restoration of a historic landmark preserving original character.
+                            </p>
+                            <div class="project-meta">
+                                <span class="project-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    San Francisco, CA
+                                </span>
+                                <span class="project-date">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-action" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        <i class="fas fa-folder-open"></i>
+                        View All Projects
+                    </a>
                 </div>
             </div>
-            <div class="project-item">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Villa">
-                <div class="overlay">
-                    <h3>Luxury Villa</h3>
-                    <p>Bespoke villa blending luxury and functionality.</p>
-                    <a href="gallery.html" class="project-btn">View Details</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-modern" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="section-badge">Get In Touch</div>
+                        <h2 class="section-title">Let's Build Something Amazing Together</h2>
+                        <p class="contact-description">
+                            Ready to start your construction project? Get in touch with us today for a free consultation 
+                            and let's discuss how we can bring your vision to life.
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Call Us</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email Us</h4>
+                                    <p>info@bonix.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Visit Us</h4>
+                                    <p>123 Builder Street<br>Construction City, CC 12345</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container" data-aos="fade-left">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" class="form-input" required>
+                                <label for="name" class="form-label">Full Name</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <label for="email" class="form-label">Email Address</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                <label for="phone" class="form-label">Phone Number</label>
+                            </div>
+
+                            <div class="form-group">
+                                <select id="service" name="service" class="form-select" required>
+                                    <option value="">Select Service</option>
+                                    <option value="construction">Construction</option>
+                                    <option value="architecture">Architecture</option>
+                                    <option value="interior-design">Interior Design</option>
+                                    <option value="renovation">Renovation</option>
+                                    <option value="consulting">Consulting</option>
+                                </select>
+                                <label for="service" class="form-label">Service Needed</label>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                                <label for="message" class="form-label">Project Details</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg form-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="project-item">
-                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b" alt="Urban Apartment">
-                <div class="overlay">
-                    <h3>Urban Apartment</h3>
-                    <p>Modern living spaces completed in 2021.</p>
-                    <a href="gallery.html" class="project-btn">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- CTA Banner -->
-    <section class="cta-banner animate">
-        <h2 class="animate-text">Ready to Start Your Project?</h2>
-        <p class="animate-text">Let’s build something extraordinary together.</p>
-        <a href="contact.html#appointment" class="cta-btn animate-text">Book a Consultation</a>
-    </section>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
-    <!-- Contact Section -->
-    <section class="contact animate">
-        <h2 class="animate-text">Contact Us</h2>
-        <div class="contact-content">
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required class="animate-text">
-                <input type="email" placeholder="Email" required class="animate-text">
-                <textarea placeholder="Message" required class="animate-text"></textarea>
-                <button type="submit" class="submit-btn animate-text">Send Message</button>
-            </form>
-            <div class="contact-info">
-                <h3 class="animate-text">Get in Touch</h3>
-                <p class="animate-text">Email: <a href="mailto:info@bonix.com">info@bonix.com</a></p>
-                <p class="animate-text">Phone: +1 (555) 123-4567</p>
-                <p class="animate-text">Address: 123 Builder St, City, Country</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Bonix</h3>
-                <p>Building dreams with quality and precision since 2010.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>Email: info@bonix.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <p>Address: 123 Builder St, City, Country</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Bonix Construction. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/component-loader.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
