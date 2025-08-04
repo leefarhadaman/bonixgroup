@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geo-Tech Investigation Services | Bonix</title>
+  <meta name="description" content="Professional geotechnical investigation services by Bonix - Comprehensive soil analysis, foundation assessment, and ground condition evaluation for construction projects." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/modern-styles.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+
+  <style>
+    /* Custom styles for geo-tech investigation page */
+    .geotech-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(26,32,44,0.9) 0%, rgba(230,57,70,0.8) 100%),
+                  url('https://images.unsplash.com/photo-1546376756-0e4431dab298?auto=format&fit=crop&w=1400&q=80') center/cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .geotech-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(247,127,0,0.2) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #fff 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .services-showcase {
+      padding: 5rem 1rem;
+      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-item {
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--primary-color), rgba(230,57,70,0.1));
+      border-radius: 0 20px 0 100%;
+      opacity: 0.1;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(230,57,70,0.15);
+    }
+
+    .service-icon {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 8px 25px rgba(230,57,70,0.3);
+    }
+
+    .service-icon i {
+      font-size: 2.2rem;
+      color: white;
+    }
+
+    .service-features {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .service-features i {
+      color: var(--primary-color);
+      font-size: 0.9rem;
+    }
+
+    .expertise-section {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .expertise-content h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .expertise-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .expertise-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .expertise-list .icon {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .process-section {
+      padding: 5rem 1rem;
+      background: white;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 20px;
+      border: 2px solid #edf2f7;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .process-step:hover::before {
+      opacity: 1;
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+      background: white;
+    }
+
+    .step-number {
+      width: 70px;
+      height: 70px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 auto 2rem;
+    }
+
+    .benefits-section {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-item {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(230,57,70,0.15);
+    }
+
+    .benefit-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .benefit-icon i {
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .cta-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #f77f00 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="geotech-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-search-location"></i>
+            Geo-Tech Investigation Excellence
+          </div>
+          <h1 class="hero-title">
+            Foundation <span class="hero-highlight">Intelligence</span><br>
+            For Safer Construction
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2.5rem; line-height: 1.6;">
+            Comprehensive geotechnical investigations providing critical ground condition data, 
+            soil analysis, and foundation recommendations to ensure safe, efficient, and cost-effective construction projects.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn btn-primary btn-lg">
+              <i class="fas fa-phone"></i>
+              Request Investigation
+            </a>
+            <a href="index.html#services" class="btn btn-outline btn-lg">
+              <i class="fas fa-microscope"></i>
+              Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Showcase -->
+    <section class="services-showcase" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Comprehensive Investigation Services
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            Our expert geotechnical team provides detailed subsurface investigations and analysis 
+            to support informed decision-making for your construction projects.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Soil Analysis & Testing</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Comprehensive soil characterization including bearing capacity, settlement analysis, 
+              and geotechnical properties evaluation for foundation design.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Soil classification and properties</li>
+              <li><i class="fas fa-check"></i> Bearing capacity analysis</li>
+              <li><i class="fas fa-check"></i> Settlement predictions</li>
+              <li><i class="fas fa-check"></i> Consolidation testing</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-drill"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Borehole Drilling & Sampling</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Professional drilling operations with continuous sampling to determine subsurface 
+              conditions and groundwater levels across your project site.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Standard penetration testing</li>
+              <li><i class="fas fa-check"></i> Continuous soil sampling</li>
+              <li><i class="fas fa-check"></i> Groundwater monitoring</li>
+              <li><i class="fas fa-check"></i> Rock core drilling</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Foundation Recommendations</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Expert foundation design recommendations based on soil conditions, structural loads, 
+              and site-specific constraints for optimal performance.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Foundation type selection</li>
+              <li><i class="fas fa-check"></i> Depth and size recommendations</li>
+              <li><i class="fas fa-check"></i> Load-bearing calculations</li>
+              <li><i class="fas fa-check"></i> Construction methodology</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-tint"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Groundwater Assessment</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Detailed groundwater analysis including seasonal variations, contamination assessment, 
+              and impact evaluation for construction activities.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Water table monitoring</li>
+              <li><i class="fas fa-check"></i> Seasonal variation analysis</li>
+              <li><i class="fas fa-check"></i> Contamination testing</li>
+              <li><i class="fas fa-check"></i> Dewatering recommendations</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Slope Stability Analysis</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Comprehensive slope stability evaluations and risk assessments for excavations, 
+              embankments, and natural slope conditions.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Stability calculations</li>
+              <li><i class="fas fa-check"></i> Risk assessment</li>
+              <li><i class="fas fa-check"></i> Remediation strategies</li>
+              <li><i class="fas fa-check"></i> Monitoring systems</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Detailed Reporting</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Comprehensive geotechnical reports with clear recommendations, technical drawings, 
+              and actionable insights for engineering teams.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Site investigation reports</li>
+              <li><i class="fas fa-check"></i> Technical drawings</li>
+              <li><i class="fas fa-check"></i> Engineering recommendations</li>
+              <li><i class="fas fa-check"></i> Construction guidelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+      <div class="container">
+        <div class="expertise-grid">
+          <div class="expertise-content">
+            <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 2rem;">
+              Why Choose Bonix Geo-Tech Services?
+            </h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.7;">
+              With over 15 years of geotechnical expertise, we provide comprehensive subsurface investigations 
+              that ensure your construction projects are built on solid foundations with complete confidence.
+            </p>
+            
+            <ul class="expertise-list">
+              <li>
+                <div class="icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <div>
+                  <strong>Certified Geotechnical Engineers</strong><br>
+                  <span style="color: var(--text-secondary);">Licensed professionals with extensive field experience</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <div>
+                  <strong>Advanced Equipment</strong><br>
+                  <span style="color: var(--text-secondary);">State-of-the-art drilling and testing equipment</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                  <strong>Fast Turnaround</strong><br>
+                  <span style="color: var(--text-secondary);">Quick investigation completion without compromising quality</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                  <strong>Cost Optimization</strong><br>
+                  <span style="color: var(--text-secondary);">Strategic recommendations that save construction costs</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" 
+                 alt="Geotechnical Investigation Team" 
+                 style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Investigation Process -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Our Investigation Process
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            A systematic approach ensuring comprehensive site understanding and accurate 
+            geotechnical recommendations for your construction needs.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 style="margin-bottom: 1rem;">Site Assessment</h3>
+            <p style="color: var(--text-secondary);">
+              Initial site reconnaissance, desk study, and planning of investigation scope 
+              based on project requirements and site conditions.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 style="margin-bottom: 1rem;">Field Investigation</h3>
+            <p style="color: var(--text-secondary);">
+              Execution of drilling program, sampling operations, and in-situ testing 
+              using state-of-the-art equipment and techniques.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 style="margin-bottom: 1rem;">Laboratory Testing</h3>
+            <p style="color: var(--text-secondary);">
+              Comprehensive laboratory analysis of soil and rock samples to determine 
+              engineering properties and characteristics.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 style="margin-bottom: 1rem;">Data Analysis</h3>
+            <p style="color: var(--text-secondary);">
+              Professional interpretation of field and laboratory data using advanced 
+              geotechnical software and engineering principles.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <h3 style="margin-bottom: 1rem;">Report Delivery</h3>
+            <p style="color: var(--text-secondary);">
+              Comprehensive geotechnical report with clear recommendations, drawings, 
+              and actionable insights for design teams.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">6</div>
+            <h3 style="margin-bottom: 1rem;">Ongoing Support</h3>
+            <p style="color: var(--text-secondary);">
+              Continued consultation during design and construction phases to address 
+              any geotechnical concerns or modifications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Investigation Benefits
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            Professional geotechnical investigations provide critical insights that ensure project success 
+            and prevent costly construction issues.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Risk Mitigation</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Identify potential ground-related risks early to avoid costly construction delays and modifications.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Cost Optimization</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Optimize foundation design and construction methods based on actual ground conditions.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Code Compliance</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Ensure designs meet all relevant building codes and engineering standards.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Time Savings</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Prevent construction delays by understanding ground conditions before building begins.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Ready for Your Site Investigation?
+          </h2>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+            Get comprehensive geotechnical insights for your construction project. Contact our expert team 
+            for detailed site investigation and professional recommendations.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-white btn-lg">
+              <i class="fas fa-phone"></i>
+              Schedule Investigation
+            </a>
+            <a href="mailto:geotech@bonix.com" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+              <i class="fas fa-envelope"></i>
+              Email Our Experts
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/component-loader.js"></script>
+  <script src="../../js/animations.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Architecture Services | Bonix</title>
+  <meta name="description" content="Professional architectural services by Bonix - Innovative design solutions, sustainable architecture, and comprehensive planning for residential, commercial, and institutional projects." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/modern-styles.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+
+  <style>
+    /* Custom styles for architecture page */
+    .architecture-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(26,32,44,0.9) 0%, rgba(230,57,70,0.8) 100%),
+                  url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1400&q=80') center/cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .architecture-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(247,127,0,0.2) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #fff 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Design Philosophy Section */
+    .philosophy-section {
+      padding: 5rem 1rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .philosophy-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+    }
+
+    .philosophy-points {
+      list-style: none;
+      padding: 0;
+    }
+
+    .philosophy-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .philosophy-icon {
+      background: var(--primary-color);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Services Grid - Different Layout */
+    .services-showcase {
+      padding: 5rem 1rem;
+      background: white;
+    }
+
+    .services-masonry {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 2px solid transparent;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .service-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary-color);
+      box-shadow: 0 15px 35px rgba(230,57,70,0.15);
+    }
+
+    .service-header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-number {
+      background: var(--primary-color);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .service-card h3 {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .service-card p {
+      position: relative;
+      z-index: 2;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-highlights {
+      position: relative;
+      z-index: 2;
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-highlights li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .service-highlights i {
+      color: var(--primary-color);
+      font-size: 0.8rem;
+    }
+
+    /* Portfolio Preview Section */
+    .portfolio-section {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-item {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .portfolio-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .portfolio-content {
+      padding: 1.5rem;
+    }
+
+    .portfolio-content h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .portfolio-content p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Process Timeline - Horizontal Layout */
+    .process-section {
+      padding: 5rem 1rem;
+      background: white;
+    }
+
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .process-item {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 15px;
+      border: 2px solid #edf2f7;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .process-item:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(230,57,70,0.1);
+    }
+
+    .process-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .process-icon i {
+      font-size: 1.5rem;
+    }
+
+    .process-item h4 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .process-item p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .cta-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #f77f00 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .services-masonry {
+        grid-template-columns: 1fr;
+      }
+      
+      .process-flow {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="architecture-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-drafting-compass"></i>
+            Architecture & Design Excellence
+          </div>
+          <h1 class="hero-title">
+            Creating <span class="hero-highlight">Inspiring</span><br>
+            Spaces That Matter
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2.5rem; line-height: 1.6;">
+            Innovative architectural design solutions that blend functionality with aesthetics, 
+            creating sustainable and inspiring environments for living, working, and community engagement.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn btn-primary btn-lg">
+              <i class="fas fa-phone"></i>
+              Start Your Design
+            </a>
+            <a href="about.html" class="btn btn-outline btn-lg">
+              <i class="fas fa-building"></i>
+              Our Approach
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Philosophy -->
+    <section class="philosophy-section">
+      <div class="container">
+        <div class="philosophy-grid">
+          <div class="philosophy-content">
+            <h2>Our Design Philosophy</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.7;">
+              Architecture is more than just building design—it's about creating environments that enhance human experience, 
+              promote sustainability, and reflect the unique character of each community and client.
+            </p>
+            
+            <ul class="philosophy-points">
+              <li>
+                <div class="philosophy-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div>
+                  <strong>Human-Centered Design</strong><br>
+                  <span style="color: var(--text-secondary);">Spaces designed for the people who use them</span>
+                </div>
+              </li>
+              <li>
+                <div class="philosophy-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <div>
+                  <strong>Sustainable Solutions</strong><br>
+                  <span style="color: var(--text-secondary);">Environmentally responsible design practices</span>
+                </div>
+              </li>
+              <li>
+                <div class="philosophy-icon">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <div>
+                  <strong>Innovation & Creativity</strong><br>
+                  <span style="color: var(--text-secondary);">Pushing boundaries while honoring context</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <img src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?auto=format&fit=crop&w=800&q=80" 
+                 alt="Architectural Design Process" 
+                 style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Showcase -->
+    <section class="services-showcase" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Comprehensive Design Services
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            From conceptual design to construction documentation, we provide complete architectural services 
+            tailored to bring your vision to life with precision and creativity.
+          </p>
+        </div>
+
+        <div class="services-masonry">
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-number">01</div>
+              <h3>Conceptual Design</h3>
+            </div>
+            <p>
+              Initial design concepts and schematic development that explore possibilities 
+              and establish the fundamental design direction for your project.
+            </p>
+            <ul class="service-highlights">
+              <li><i class="fas fa-circle"></i> Site analysis and programming</li>
+              <li><i class="fas fa-circle"></i> Conceptual sketches and models</li>
+              <li><i class="fas fa-circle"></i> Space planning and layout</li>
+              <li><i class="fas fa-circle"></i> Design presentations</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-number">02</div>
+              <h3>Design Development</h3>
+            </div>
+            <p>
+              Detailed development of approved concepts with refined designs, 
+              material selection, and coordination of all building systems.
+            </p>
+            <ul class="service-highlights">
+              <li><i class="fas fa-circle"></i> Detailed floor plans and elevations</li>
+              <li><i class="fas fa-circle"></i> Material and finish selections</li>
+              <li><i class="fas fa-circle"></i> 3D modeling and visualization</li>
+              <li><i class="fas fa-circle"></i> System coordination</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-number">03</div>
+              <h3>Construction Documents</h3>
+            </div>
+            <p>
+              Complete technical drawings and specifications required for permitting, 
+              bidding, and construction of your architectural project.
+            </p>
+            <ul class="service-highlights">
+              <li><i class="fas fa-circle"></i> Working drawings and details</li>
+              <li><i class="fas fa-circle"></i> Technical specifications</li>
+              <li><i class="fas fa-circle"></i> Code compliance documentation</li>
+              <li><i class="fas fa-circle"></i> Permit application support</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-number">04</div>
+              <h3>Interior Architecture</h3>
+            </div>
+            <p>
+              Comprehensive interior design services that create functional and 
+              beautiful spaces aligned with the overall architectural vision.
+            </p>
+            <ul class="service-highlights">
+              <li><i class="fas fa-circle"></i> Space planning and layout</li>
+              <li><i class="fas fa-circle"></i> Custom millwork design</li>
+              <li><i class="fas fa-circle"></i> Lighting and electrical planning</li>
+              <li><i class="fas fa-circle"></i> Furniture and fixture selection</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-number">05</div>
+              <h3>Sustainable Design</h3>
+            </div>
+            <p>
+              Green building strategies and sustainable design solutions that minimize 
+              environmental impact while maximizing performance and efficiency.
+            </p>
+            <ul class="service-highlights">
+              <li><i class="fas fa-circle"></i> Energy-efficient design strategies</li>
+              <li><i class="fas fa-circle"></i> Sustainable material selection</li>
+              <li><i class="fas fa-circle"></i> LEED certification support</li>
+              <li><i class="fas fa-circle"></i> Environmental impact assessment</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-number">06</div>
+              <h3>Construction Administration</h3>
+            </div>
+            <p>
+              Ongoing support during construction to ensure the design intent is 
+              properly implemented and quality standards are maintained.
+            </p>
+            <ul class="service-highlights">
+              <li><i class="fas fa-circle"></i> Construction oversight</li>
+              <li><i class="fas fa-circle"></i> Shop drawing review</li>
+              <li><i class="fas fa-circle"></i> Site visits and inspections</li>
+              <li><i class="fas fa-circle"></i> Change order management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="portfolio-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Design Excellence
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            Explore our diverse portfolio of architectural projects that demonstrate our commitment 
+            to innovative design, functional excellence, and sustainable practices.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80');">
+              <div class="portfolio-overlay">Residential</div>
+            </div>
+            <div class="portfolio-content">
+              <h4>Modern Family Home</h4>
+              <p>Contemporary design blending indoor-outdoor living with sustainable features.</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80');">
+              <div class="portfolio-overlay">Commercial</div>
+            </div>
+            <div class="portfolio-content">
+              <h4>Corporate Headquarters</h4>
+              <p>Innovative office design promoting collaboration and employee well-being.</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=800&q=80');">
+              <div class="portfolio-overlay">Mixed-Use</div>
+            </div>
+            <div class="portfolio-content">
+              <h4>Urban Development</h4>
+              <p>Mixed-use development creating vibrant community spaces and housing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Process -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Our Design Process
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            A collaborative approach that ensures your vision is realized through careful planning, 
+            creative exploration, and meticulous attention to detail.
+          </p>
+        </div>
+
+        <div class="process-flow">
+          <div class="process-item">
+            <div class="process-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>Discovery</h4>
+            <p>Understanding your needs, goals, and vision through collaborative consultation.</p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h4>Analysis</h4>
+            <p>Site analysis, code research, and program development to inform design decisions.</p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-icon">
+              <i class="fas fa-pencil-ruler"></i>
+            </div>
+            <h4>Design</h4>
+            <p>Creative design development from initial concepts to detailed documentation.</p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h4>Documentation</h4>
+            <p>Complete construction documents and specifications for project realization.</p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-icon">
+              <i class="fas fa-hammer"></i>
+            </div>
+            <h4>Implementation</h4>
+            <p>Construction administration ensuring design intent is properly executed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Ready to Create Something Extraordinary?
+          </h2>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+            Let's collaborate to design spaces that inspire, function beautifully, and stand the test of time. 
+            Contact our architectural team to begin your design journey.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-white btn-lg">
+              <i class="fas fa-phone"></i>
+              Schedule Consultation
+            </a>
+            <a href="mailto:design@bonix.com" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+              <i class="fas fa-envelope"></i>
+              Email Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/component-loader.js"></script>
+  <script src="../../js/animations.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

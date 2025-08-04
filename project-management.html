@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Management Services | Bonix</title>
+  <meta name="description" content="Professional construction project management by Bonix - Expert oversight, coordination, and delivery of construction projects on time and within budget." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/modern-styles.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+
+  <style>
+    /* Custom styles for project management page */
+    .pm-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(26,32,44,0.9) 0%, rgba(230,57,70,0.8) 100%),
+                  url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80') center/cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .pm-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(247,127,0,0.2) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #fff 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Statistics Section */
+    .stats-section {
+      padding: 5rem 1rem;
+      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(230,57,70,0.15);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    /* Services Grid */
+    .services-showcase {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-item {
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--primary-color), rgba(230,57,70,0.1));
+      border-radius: 0 20px 0 100%;
+      opacity: 0.1;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(230,57,70,0.15);
+    }
+
+    .service-icon {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 25px rgba(230,57,70,0.3);
+    }
+
+    .service-icon i {
+      font-size: 2.2rem;
+      color: white;
+    }
+
+    .service-features {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .service-features i {
+      color: var(--primary-color);
+      font-size: 0.9rem;
+    }
+
+    /* Process Timeline */
+    .process-section {
+      padding: 5rem 1rem;
+      background: white;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 20px;
+      border: 2px solid #edf2f7;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .process-step:hover::before {
+      opacity: 1;
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+      background: white;
+    }
+
+    .step-number {
+      width: 70px;
+      height: 70px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #f77f00 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="pm-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-tasks"></i>
+            Project Management Excellence
+          </div>
+          <h1 class="hero-title">
+            Delivering <span class="hero-highlight">Success</span><br>
+            On Time, Every Time
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2.5rem; line-height: 1.6;">
+            Expert project management ensuring your construction projects are completed on schedule, within budget, 
+            and to the highest quality standards through professional oversight and coordination.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn btn-primary btn-lg">
+              <i class="fas fa-phone"></i>
+              Discuss Your Project
+            </a>
+            <a href="#services" class="btn btn-outline btn-lg">
+              <i class="fas fa-clipboard-list"></i>
+              Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Statistics -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Project Success by the Numbers
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            Our proven track record of successful project delivery speaks to our commitment 
+            to excellence in construction project management.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">250+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">On-Time Delivery</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">$50M+</span>
+            <span class="stat-label">Total Project Value</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">95%</span>
+            <span class="stat-label">Under Budget</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Showcase -->
+    <section class="services-showcase" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Comprehensive Project Management
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            End-to-end project management services ensuring seamless coordination, quality control, 
+            and successful delivery of your construction projects.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Project Planning & Scheduling</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+              Comprehensive project planning with detailed schedules, resource allocation, 
+              and milestone tracking to ensure timely completion.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Detailed project scheduling</li>
+              <li><i class="fas fa-check"></i> Resource planning & allocation</li>
+              <li><i class="fas fa-check"></i> Critical path analysis</li>
+              <li><i class="fas fa-check"></i> Milestone tracking</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Budget Management</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+              Expert financial oversight with cost control, budget tracking, and expense management 
+              to keep your project within financial parameters.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Cost estimation & control</li>
+              <li><i class="fas fa-check"></i> Budget tracking & reporting</li>
+              <li><i class="fas fa-check"></i> Change order management</li>
+              <li><i class="fas fa-check"></i> Financial risk assessment</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Team Coordination</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+              Seamless coordination between all project stakeholders including contractors, 
+              suppliers, and specialists for optimal project flow.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Contractor coordination</li>
+              <li><i class="fas fa-check"></i> Supplier management</li>
+              <li><i class="fas fa-check"></i> Communication protocols</li>
+              <li><i class="fas fa-check"></i> Conflict resolution</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Quality Control</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+              Rigorous quality assurance and control measures ensuring all work meets 
+              specifications and industry standards throughout the project lifecycle.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Quality inspections</li>
+              <li><i class="fas fa-check"></i> Standards compliance</li>
+              <li><i class="fas fa-check"></i> Progress monitoring</li>
+              <li><i class="fas fa-check"></i> Issue resolution</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Risk Management</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+              Proactive identification, assessment, and mitigation of project risks to prevent 
+              delays and cost overruns while ensuring safety compliance.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Risk identification & assessment</li>
+              <li><i class="fas fa-check"></i> Mitigation strategies</li>
+              <li><i class="fas fa-check"></i> Safety compliance</li>
+              <li><i class="fas fa-check"></i> Contingency planning</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Progress Reporting</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+              Regular project updates and detailed reporting keeping all stakeholders informed 
+              of progress, issues, and upcoming milestones.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Regular progress reports</li>
+              <li><i class="fas fa-check"></i> Dashboard monitoring</li>
+              <li><i class="fas fa-check"></i> Stakeholder updates</li>
+              <li><i class="fas fa-check"></i> Performance metrics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Management Process -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Our Project Management Process
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            A proven methodology ensuring systematic project delivery with clear phases, 
+            defined milestones, and consistent quality throughout the construction process.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 style="margin-bottom: 1rem;">Project Initiation</h3>
+            <p style="color: var(--text-secondary);">
+              Comprehensive project assessment, stakeholder identification, and initial planning 
+              to establish project framework and objectives.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 style="margin-bottom: 1rem;">Planning & Design</h3>
+            <p style="color: var(--text-secondary);">
+              Detailed project planning including schedules, budgets, resource allocation, 
+              and risk assessment for successful execution.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 style="margin-bottom: 1rem;">Execution Management</h3>
+            <p style="color: var(--text-secondary);">
+              Active project oversight with team coordination, progress monitoring, 
+              and quality control throughout the construction phase.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 style="margin-bottom: 1rem;">Monitoring & Control</h3>
+            <p style="color: var(--text-secondary);">
+              Continuous performance tracking, issue resolution, and corrective actions 
+              to maintain project alignment with objectives.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <h3 style="margin-bottom: 1rem;">Quality Assurance</h3>
+            <p style="color: var(--text-secondary);">
+              Rigorous quality inspections, testing, and verification to ensure all work 
+              meets specifications and industry standards.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">6</div>
+            <h3 style="margin-bottom: 1rem;">Project Closeout</h3>
+            <p style="color: var(--text-secondary);">
+              Final inspections, documentation handover, and project closure with 
+              comprehensive reporting and lessons learned documentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Ready to Ensure Project Success?
+          </h2>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+            Partner with our experienced project management team to deliver your construction project 
+            on time, within budget, and to the highest quality standards.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-white btn-lg">
+              <i class="fas fa-phone"></i>
+              Discuss Your Project
+            </a>
+            <a href="mailto:pm@bonix.com" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+              <i class="fas fa-envelope"></i>
+              Email Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/component-loader.js"></script>
+  <script src="../../js/animations.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

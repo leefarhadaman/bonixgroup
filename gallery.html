@@ -1,152 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bonix Construction Gallery - Explore our stunning project images.">
-    <title>Gallery - Bonix Construction</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Bonix</title>
+  <meta name="description" content="Bonix Project Gallery – Premium Construction Image Showcase." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="../css/modern-styles.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <style>
+    /* Enhanced hero section */
+    .gallery-hero {
+      position: relative;
+      background: 
+        linear-gradient(125deg, rgba(26,32,44,0.88) 45%, rgba(230,57,70,0.75) 100%), 
+        url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 6rem;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .gallery-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(230,57,70,0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    
+    .gallery-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      padding: 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .gallery-hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      letter-spacing: -2px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .gallery-hero p {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #f0f4f8;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Enhanced gallery section */
+    .gallery-main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 5rem;
+      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 
+        0 8px 25px rgba(44,62,80,0.12),
+        0 3px 6px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background: #fff;
+      transform-origin: center;
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(230,57,70,0.1) 0%, rgba(247,127,0,0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    .gallery-item:hover::before {
+      opacity: 1;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(44,62,80,0.2),
+        0 8px 16px rgba(230,57,70,0.15);
+      z-index: 10;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08) rotate(-0.5deg);
+      filter: brightness(0.95) saturate(1.1);
+    }
+
+    /* Enhanced Show More button */
+    .show-more-section {
+      text-align: center;
+      margin: 3.5rem 0 0;
+      position: relative;
+    }
+
+    .btn-show-more {
+      position: relative;
+      background: linear-gradient(135deg, #e63946 0%, #f77f00 100%);
+      color: #fff;
+      border: none;
+      padding: 1rem 3rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 
+        0 8px 30px rgba(230,57,70,0.4),
+        0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overflow: hidden;
+    }
+
+    .btn-show-more::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-show-more:hover::before {
+      left: 100%;
+    }
+
+    .btn-show-more:hover {
+      background: linear-gradient(135deg, #d00000 0%, #e67300 100%);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 
+        0 12px 40px rgba(230,57,70,0.5),
+        0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn-show-more:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    /* Loading animation for new items */
+    .gallery-item.show-animation {
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .gallery-hidden {
+      display: none;
+    }
+
+    /* Responsive enhancements */
+    @media (max-width: 900px) {
+      .gallery-hero {
+        min-height: 50vh;
+        padding-top: 5rem;
+      }
+      
+      .gallery-hero h1 {
+        font-size: 2.4rem;
+      }
+      
+      .gallery-item img {
+        height: 200px;
+      }
+      
+      .gallery-main {
+        padding: 3rem 1rem 4rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-hero h1 {
+        font-size: 1.9rem;
+        letter-spacing: -1px;
+      }
+      
+      .gallery-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .gallery-item img {
+        height: 160px;
+      }
+      
+      .gallery-grid {
+        gap: 1.2rem;
+      }
+      
+      .btn-show-more {
+        padding: 0.9rem 2.5rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader">
-            <div class="logo">
-                <img src="logo.png" alt="Bonix Logo">
-            </div>
-            <div class="spinner"></div>
-        </div>
-    </div>
+  <div id="navbar-placeholder"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Bonix Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="dropdown">
-                <a href="services.html" class="dropdown-toggle">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="construction.html">Construction</a></li>
-                    <li><a href="architecture.html">Architecture</a></li>
-                    <li><a href="interior-design.html">Interior Design</a></li>
-                    <li><a href="renovation.html">Renovation</a></li>
-                    <li><a href="project-management.html">Project Management</a></li>
-                    <li><a href="consulting.html">Consulting</a></li>
-                </ul>
-            </li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="gallery.html" class="active">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="contact.html#appointment" class="appointment-btn">Book Appointment</a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero gallery-hero">
-        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
-            <div class="hero-content">
-                <h1>Project Gallery</h1>
-                <p>A visual journey through our finest work.</p>
-                <a href="contact.html#appointment" class="cta-btn">Start Your Project</a>
-            </div>
-        </div>
+  <main>
+    <!-- Enhanced Hero Section -->
+    <section class="gallery-hero">
+      <div class="gallery-hero-content">
+        <h1>Our Project Gallery</h1>
+        <p>Discover our newest and most prestigious developments from around the globe</p>
+      </div>
     </section>
 
-    <!-- Gallery Grid -->
-    <section class="gallery animate" id="gallery-grid">
-        <h2 class="animate-text">Our Work</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item animate-img">
-                <img src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db" alt="Modern Residence">
-                <div class="gallery-overlay">
-                    <h3>Modern Residence</h3>
-                    <p>Completed in 2023</p>
-                </div>
-            </div>
-            <div class="gallery-item animate-img">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Commercial Complex">
-                <div class="gallery-overlay">
-                    <h3>Commercial Complex</h3>
-                    <p>Completed in 2022</p>
-                </div>
-            </div>
-            <div class="gallery-item animate-img">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Villa">
-                <div class="gallery-overlay">
-                    <h3>Luxury Villa</h3>
-                    <p>Completed in 2021</p>
-                </div>
-            </div>
-            <div class="gallery-item animate-img">
-                <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b" alt="Urban Apartment">
-                <div class="gallery-overlay">
-                    <h3>Urban Apartment</h3>
-                    <p>Completed in 2020</p>
-                </div>
-            </div>
-            <div class="gallery-item animate-img">
-                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Interior Design">
-                <div class="gallery-overlay">
-                    <h3>Interior Design</h3>
-                    <p>Completed in 2023</p>
-                </div>
-            </div>
-            <div class="gallery-item animate-img">
-                <img src="https://images.unsplash.com/photo-1618221710640-c0eaaa2adb49" alt="Renovation">
-                <div class="gallery-overlay">
-                    <h3>Renovation</h3>
-                    <p>Completed in 2022</p>
-                </div>
-            </div>
+    <!-- Enhanced Gallery Section -->
+    <section class="gallery-main">
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Initially visible items -->
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Modern Apartment Complex" loading="lazy">
         </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1515263487990-61c8b3b77373?auto=format&fit=crop&w=800&q=80" alt="Commercial High-Rise" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2?auto=format&fit=crop&w=800&q=80" alt="Community Housing" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80" alt="Penthouse Construction" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=800&q=80" alt="Sustainable Townhouse" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=800&q=80" alt="Contemporary Residence" loading="lazy">
+        </div>
+        
+        <!-- Hidden items -->
+        <div class="gallery-item gallery-hidden">
+          <img src="https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=800&q=80" alt="Waterfront Project" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" alt="Luxury Office Lobby" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden">
+          <img src="https://images.unsplash.com/photo-1510936111840-503a2edc0b97?auto=format&fit=crop&w=800&q=80" alt="Interior Design" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden">
+          <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80" alt="Retail Plaza" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden">
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80" alt="Modern Office" loading="lazy">
+        </div>
+        <div class="gallery-item gallery-hidden">
+          <img src="https://images.unsplash.com/photo-1464516004857-1a084d1b92f2?auto=format&fit=crop&w=800&q=80" alt="Resort Development" loading="lazy">
+        </div>
+      </div>
+      
+      <div class="show-more-section">
+        <button id="showMoreBtn" class="btn-show-more" aria-label="Show more projects">
+          <i class="fas fa-plus"></i> Show More
+        </button>
+      </div>
     </section>
+  </main>
 
-    <!-- CTA Banner -->
-    <section class="cta-banner animate">
-        <h2 class="animate-text">Inspired by Our Work?</h2>
-        <p class="animate-text">Let’s create your masterpiece.</p>
-        <a href="contact.html#appointment" class="cta-btn animate-text">Get Started</a>
-    </section>
+  <div id="footer-placeholder"></div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Bonix</h3>
-                <p>Building dreams with quality and precision since 2010.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>Email: info@bonix.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <p>Address: 123 Builder St, City, Country</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Bonix Construction. All rights reserved.</p>
-        </div>
-    </footer>
+  <script src="../js/component-loader.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/main.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('showMoreBtn');
+      const hiddenItems = document.querySelectorAll('.gallery-hidden');
+      
+      btn.addEventListener('click', function() {
+        // Add staggered animation to new items
+        hiddenItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.remove('gallery-hidden');
+            item.classList.add('show-animation');
+          }, index * 100); // 100ms delay between each item
+        });
+        
+        // Hide the button after a delay
+        setTimeout(() => {
+          btn.style.display = 'none';
+        }, hiddenItems.length * 100 + 200);
+      });
 
-    <script src="script.js"></script>
+      // Add scroll reveal effect for initially visible items
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationDelay = '0s';
+            entry.target.classList.add('show-animation');
+          }
+        });
+      }, observerOptions);
+
+      // Observe initially visible gallery items
+      document.querySelectorAll('.gallery-item:not(.gallery-hidden)').forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
 </body>
 </html>

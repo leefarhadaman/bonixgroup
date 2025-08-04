@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Topographical Survey Services | Bonix</title>
+  <meta name="description" content="Professional topographical survey services by Bonix - Accurate land surveying, digital mapping, and precise elevation measurements for construction and development projects." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/modern-styles.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+
+  <style>
+    /* Custom styles for topo survey page */
+    .topo-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(26,32,44,0.9) 0%, rgba(230,57,70,0.8) 100%),
+                  url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80') center/cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .topo-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(247,127,0,0.2) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #fff 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .services-showcase {
+      padding: 5rem 1rem;
+      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-item {
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--primary-color), rgba(230,57,70,0.1));
+      border-radius: 0 20px 0 100%;
+      opacity: 0.1;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(230,57,70,0.15);
+    }
+
+    .service-icon {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 8px 25px rgba(230,57,70,0.3);
+    }
+
+    .service-icon i {
+      font-size: 2.2rem;
+      color: white;
+    }
+
+    .service-features {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .service-features i {
+      color: var(--primary-color);
+      font-size: 0.9rem;
+    }
+
+    .expertise-section {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .expertise-content h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .expertise-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .expertise-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .expertise-list .icon {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .process-section {
+      padding: 5rem 1rem;
+      background: white;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 20px;
+      border: 2px solid #edf2f7;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .process-step:hover::before {
+      opacity: 1;
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+      background: white;
+    }
+
+    .step-number {
+      width: 70px;
+      height: 70px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 auto 2rem;
+    }
+
+    .benefits-section {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-item {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(230,57,70,0.15);
+    }
+
+    .benefit-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .benefit-icon i {
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .cta-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #f77f00 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="topo-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-map-marked-alt"></i>
+            Topographical Survey Excellence
+          </div>
+          <h1 class="hero-title">
+            Precision <span class="hero-highlight">Mapping</span><br>
+            For Informed Planning
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2.5rem; line-height: 1.6;">
+            Comprehensive topographical surveys providing accurate land measurements, digital mapping, 
+            and detailed elevation data to support informed design decisions and successful construction projects.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn btn-primary btn-lg">
+              <i class="fas fa-phone"></i>
+              Request Survey
+            </a>
+            <a href="index.html#services" class="btn btn-outline btn-lg">
+              <i class="fas fa-map"></i>
+              Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Showcase -->
+    <section class="services-showcase" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Comprehensive Survey Services
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            Our expert surveying team provides accurate topographical data and detailed mapping services 
+            to support your construction, development, and planning requirements.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Land Surveying</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Precise land boundary surveys, property line determination, and legal descriptions 
+              for property development and ownership verification.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Boundary determination</li>
+              <li><i class="fas fa-check"></i> Property line surveys</li>
+              <li><i class="fas fa-check"></i> Legal descriptions</li>
+              <li><i class="fas fa-check"></i> Easement identification</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Elevation Mapping</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Detailed elevation measurements and contour mapping to understand terrain characteristics 
+              and support grading and drainage design decisions.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Contour line mapping</li>
+              <li><i class="fas fa-check"></i> Elevation measurements</li>
+              <li><i class="fas fa-check"></i> Slope analysis</li>
+              <li><i class="fas fa-check"></i> Drainage patterns</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-satellite"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">GPS & Digital Mapping</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Advanced GPS technology and digital mapping services providing high-accuracy 
+              coordinate data and comprehensive site documentation.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> GPS coordinate mapping</li>
+              <li><i class="fas fa-check"></i> Digital site plans</li>
+              <li><i class="fas fa-check"></i> CAD drawings</li>
+              <li><i class="fas fa-check"></i> GIS integration</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Construction Surveys</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Specialized construction surveying services including layout, as-built surveys, 
+              and progress monitoring to ensure accurate project execution.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Site layout surveys</li>
+              <li><i class="fas fa-check"></i> As-built documentation</li>
+              <li><i class="fas fa-check"></i> Progress monitoring</li>
+              <li><i class="fas fa-check"></i> Quality control surveys</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-route"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Route & Alignment Surveys</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Specialized surveys for roads, utilities, and infrastructure projects including 
+              route planning, alignment design, and corridor mapping.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Road alignment surveys</li>
+              <li><i class="fas fa-check"></i> Utility corridor mapping</li>
+              <li><i class="fas fa-check"></i> Cross-section profiles</li>
+              <li><i class="fas fa-check"></i> Right-of-way surveys</li>
+            </ul>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Survey Reports & Documentation</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Comprehensive survey reports with detailed drawings, calculations, and documentation 
+              meeting all regulatory and professional standards.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Professional survey reports</li>
+              <li><i class="fas fa-check"></i> Technical drawings</li>
+              <li><i class="fas fa-check"></i> Survey calculations</li>
+              <li><i class="fas fa-check"></i> Legal documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+      <div class="container">
+        <div class="expertise-grid">
+          <div class="expertise-content">
+            <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 2rem;">
+              Why Choose Bonix Survey Services?
+            </h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.7;">
+              With over 15 years of surveying expertise, we provide accurate, reliable topographical data 
+              using state-of-the-art equipment and proven methodologies for construction and development success.
+            </p>
+            
+            <ul class="expertise-list">
+              <li>
+                <div class="icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div>
+                  <strong>Licensed Professional Surveyors</strong><br>
+                  <span style="color: var(--text-secondary);">Certified surveyors with extensive field experience</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-satellite-dish"></i>
+                </div>
+                <div>
+                  <strong>Advanced Technology</strong><br>
+                  <span style="color: var(--text-secondary);">Latest GPS, total stations, and drone surveying equipment</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-crosshairs"></i>
+                </div>
+                <div>
+                  <strong>High Accuracy Standards</strong><br>
+                  <span style="color: var(--text-secondary);">Precision measurements meeting all industry standards</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                  <strong>Timely Delivery</strong><br>
+                  <span style="color: var(--text-secondary);">Fast turnaround without compromising accuracy</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80" 
+                 alt="Surveying Team at Work" 
+                 style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Survey Process -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Our Survey Process
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            A systematic approach ensuring accurate data collection, precise measurements, 
+            and comprehensive documentation for your project requirements.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 style="margin-bottom: 1rem;">Project Planning</h3>
+            <p style="color: var(--text-secondary);">
+              Initial consultation to understand project requirements, site access, 
+              and survey specifications for optimal data collection planning.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 style="margin-bottom: 1rem;">Field Survey</h3>
+            <p style="color: var(--text-secondary);">
+              Professional field survey operations using advanced equipment to collect 
+              accurate topographical and boundary data across the project site.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 style="margin-bottom: 1rem;">Data Processing</h3>
+            <p style="color: var(--text-secondary);">
+              Advanced data processing and analysis using professional software to 
+              create accurate maps, drawings, and coordinate systems.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 style="margin-bottom: 1rem;">Quality Control</h3>
+            <p style="color: var(--text-secondary);">
+              Comprehensive quality control checks and verification of all measurements 
+              and calculations to ensure accuracy and reliability.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <h3 style="margin-bottom: 1rem;">Report Preparation</h3>
+            <p style="color: var(--text-secondary);">
+              Professional survey report preparation with detailed drawings, calculations, 
+              and documentation meeting all regulatory requirements.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">6</div>
+            <h3 style="margin-bottom: 1rem;">Delivery & Support</h3>
+            <p style="color: var(--text-secondary);">
+              Final report delivery with ongoing support for any clarifications 
+              or additional surveying needs during project development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Survey Benefits
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            Professional topographical surveys provide essential data that ensures project success, 
+            regulatory compliance, and cost-effective development decisions.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-drafting-compass"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Accurate Design Data</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Precise topographical data enables accurate architectural and engineering design decisions.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Risk Reduction</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Identify potential site challenges early to avoid costly construction modifications.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Legal Compliance</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Ensure all development plans meet zoning, setback, and regulatory requirements.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem;">Cost Optimization</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Optimize site planning and construction methods based on accurate terrain data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Ready for Your Topographical Survey?
+          </h2>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+            Get accurate topographical data for your development project. Contact our professional 
+            surveying team for comprehensive site mapping and precise elevation measurements.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-white btn-lg">
+              <i class="fas fa-phone"></i>
+              Schedule Survey
+            </a>
+            <a href="mailto:survey@bonix.com" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+              <i class="fas fa-envelope"></i>
+              Email Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/component-loader.js"></script>
+  <script src="../../js/animations.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

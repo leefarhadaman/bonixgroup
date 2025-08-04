@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Construction Consulting Services | Bonix</title>
+  <meta name="description" content="Expert construction consulting by Bonix - Strategic guidance, technical expertise, and professional advisory services for your construction and development needs." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/modern-styles.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+
+  <style>
+    /* Custom styles for consulting page */
+    .consulting-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(37,47,63,0.95) 0%, rgba(69,123,157,0.9) 100%),
+                  url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1400&q=80') center/cover;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .consulting-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(69,123,157,0.3) 0%, transparent 60%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(15px);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #fff 0%, #64b5f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .consulting-services {
+      padding: 6rem 1rem;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      border-left: 5px solid var(--secondary-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--secondary-color), rgba(69,123,157,0.1));
+      border-radius: 0 24px 0 100%;
+      opacity: 0.1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(69,123,157,0.2);
+      border-left-color: var(--primary-color);
+    }
+
+    .service-icon {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, var(--secondary-color), #64b5f6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(69,123,157,0.3);
+    }
+
+    .service-icon i {
+      font-size: 2.2rem;
+      color: white;
+    }
+
+    .expertise-section {
+      padding: 6rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .expertise-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .expertise-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--secondary-color);
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .approach-section {
+      padding: 6rem 1rem;
+      background: white;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .approach-item {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      border-radius: 20px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .approach-item::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, var(--secondary-color), #64b5f6);
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .approach-item:hover::before {
+      opacity: 1;
+    }
+
+    .approach-item:hover {
+      transform: translateY(-8px);
+      background: white;
+      border-color: transparent;
+    }
+
+    .approach-number {
+      width: 70px;
+      height: 70px;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 auto 2rem;
+    }
+
+    .benefits-section {
+      padding: 6rem 1rem;
+      background: linear-gradient(135deg, var(--secondary-color) 0%, #64b5f6 100%);
+      color: white;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-item {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-5px);
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section {
+      padding: 5rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #f77f00 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      
+      .expertise-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .expertise-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="consulting-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-lightbulb"></i>
+            Strategic Construction Consulting
+          </div>
+          <h1 class="hero-title">
+            Expert <span class="hero-highlight">Guidance</span><br>
+            For Your Vision
+          </h1>
+          <p style="font-size: 1.3rem; margin-bottom: 3rem; line-height: 1.6;">
+            Navigate complex construction challenges with our strategic consulting services. 
+            We provide expert guidance, technical insights, and innovative solutions to optimize 
+            your construction and development processes.
+          </p>
+          <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn btn-primary btn-lg">
+              <i class="fas fa-calendar-alt"></i>
+              Schedule Consultation
+            </a>
+            <a href="about.html" class="btn btn-outline btn-lg">
+              <i class="fas fa-info-circle"></i>
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consulting Services -->
+    <section class="consulting-services" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem;">
+            Comprehensive Consulting Solutions
+          </h2>
+          <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            Our expert consultants provide strategic guidance across all phases of construction and development, 
+            ensuring your projects achieve optimal outcomes.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Strategic Planning</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+              Comprehensive project planning, feasibility studies, and strategic roadmaps to ensure successful 
+              project execution from conception to completion.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 1.6;">
+              <li>Project feasibility analysis</li>
+              <li>Strategic development planning</li>
+              <li>Risk assessment & mitigation</li>
+              <li>Timeline optimization</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Technical Advisory</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+              Expert technical guidance on construction methods, material selection, and engineering solutions 
+              to optimize project performance and quality.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 1.6;">
+              <li>Engineering consultation</li>
+              <li>Material & technology selection</li>
+              <li>Construction methodology</li>
+              <li>Quality assurance protocols</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Cost Management</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+              Detailed cost analysis, budget optimization, and financial planning to maximize value and 
+              control expenditure throughout your construction journey.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 1.6;">
+              <li>Budget planning & control</li>
+              <li>Cost estimation & analysis</li>
+              <li>Value engineering</li>
+              <li>Financial risk management</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Regulatory Compliance</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+              Navigate complex regulatory requirements, building codes, and permit processes with our 
+              comprehensive compliance consulting services.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 1.6;">
+              <li>Building code compliance</li>
+              <li>Permit acquisition support</li>
+              <li>Regulatory documentation</li>
+              <li>Inspection coordination</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Sustainability Consulting</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+              Implement sustainable construction practices and green building solutions to reduce environmental 
+              impact while enhancing long-term value.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 1.6;">
+              <li>Green building certification</li>
+              <li>Energy efficiency optimization</li>
+              <li>Sustainable material selection</li>
+              <li>Environmental impact assessment</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Project Management</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+              End-to-end project management consulting to ensure efficient coordination, timely delivery, 
+              and successful project outcomes.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 1.6;">
+              <li>Project coordination</li>
+              <li>Team management strategies</li>
+              <li>Communication protocols</li>
+              <li>Performance monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise & Experience -->
+    <section class="expertise-section">
+      <div class="container">
+        <div class="expertise-content">
+          <div>
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem;">
+              Proven Expertise & Results
+            </h2>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.7;">
+              With decades of combined experience, our consulting team brings deep industry knowledge 
+              and proven methodologies to help you achieve exceptional results in your construction endeavors.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              We've guided hundreds of clients through complex construction challenges, delivering strategic 
+              insights that save time, reduce costs, and enhance project outcomes across diverse sectors 
+              including residential, commercial, and industrial development.
+            </p>
+            
+            <div class="expertise-stats">
+              <div class="stat-card">
+                <span class="stat-number">250+</span>
+                <div class="stat-label">Consulting Engagements</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">15+</span>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">98%</span>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">$50M+</span>
+                <div class="stat-label">Project Value Advised</div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" 
+                 alt="Construction Consulting Team" 
+                 style="width: 100%; border-radius: 24px; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="approach-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Our Consulting Approach
+          </h2>
+          <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+            A systematic methodology that ensures comprehensive analysis, strategic thinking, 
+            and actionable recommendations for your success.
+          </p>
+        </div>
+
+        <div class="approach-grid">
+          <div class="approach-item">
+            <div class="approach-number">1</div>
+            <h3 style="margin-bottom: 1.5rem; font-weight: 700;">Discovery & Analysis</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Comprehensive assessment of your requirements, challenges, and objectives to develop 
+              a clear understanding of your unique situation.
+            </p>
+          </div>
+
+          <div class="approach-item">
+            <div class="approach-number">2</div>
+            <h3 style="margin-bottom: 1.5rem; font-weight: 700;">Strategic Planning</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Development of customized strategies and action plans tailored to your specific 
+              goals and market conditions.
+            </p>
+          </div>
+
+          <div class="approach-item">
+            <div class="approach-number">3</div>
+            <h3 style="margin-bottom: 1.5rem; font-weight: 700;">Implementation Support</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Hands-on guidance and support during implementation phases to ensure successful 
+              execution of recommended strategies.
+            </p>
+          </div>
+
+          <div class="approach-item">
+            <div class="approach-number">4</div>
+            <h3 style="margin-bottom: 1.5rem; font-weight: 700;">Monitoring & Optimization</h3>
+            <p style="color: var(--text-secondary); line-height: 1.7;">
+              Continuous monitoring of progress and performance with ongoing optimization 
+              recommendations for sustained success.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Why Choose Bonix Consulting?
+          </h2>
+          <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">
+            Partner with industry experts who bring proven methodologies, innovative solutions, 
+            and unwavering commitment to your success.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; font-weight: 700;">Expert Knowledge</h3>
+            <p style="opacity: 0.9; line-height: 1.6;">
+              Access to specialized expertise and industry best practices accumulated over years of experience.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; font-weight: 700;">Data-Driven Insights</h3>
+            <p style="opacity: 0.9; line-height: 1.6;">
+              Evidence-based recommendations supported by comprehensive analysis and market intelligence.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; font-weight: 700;">Collaborative Partnership</h3>
+            <p style="opacity: 0.9; line-height: 1.6;">
+              Working alongside your team as trusted partners committed to achieving your objectives.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; font-weight: 700;">Accelerated Results</h3>
+            <p style="opacity: 0.9; line-height: 1.6;">
+              Faster problem resolution and decision-making through experienced guidance and proven processes.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; font-weight: 700;">Risk Mitigation</h3>
+            <p style="opacity: 0.9; line-height: 1.6;">
+              Proactive identification and management of potential risks to protect your investment.
+            </p>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; font-weight: 700;">Proven Track Record</h3>
+            <p style="opacity: 0.9; line-height: 1.6;">
+              Demonstrated success across diverse projects and client engagements with measurable outcomes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1.5rem;">
+            Ready to Transform Your Vision?
+          </h2>
+          <p style="font-size: 1.3rem; margin-bottom: 2rem; line-height: 1.6;">
+            Let our expert consultants guide you through every step of your construction journey. 
+            Schedule a consultation today and discover how strategic guidance can elevate your success.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-white btn-lg">
+              <i class="fas fa-calendar-check"></i>
+              Book Free Consultation
+            </a>
+            <a href="tel:+1555123456" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+              <i class="fas fa-phone"></i>
+              Call: (555) 123-4567
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/component-loader.js"></script>
+  <script src="../../js/animations.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

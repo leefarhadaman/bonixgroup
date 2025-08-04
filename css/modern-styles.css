@@ -287,7 +287,7 @@ body {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--primary-color);
+    /* border: 2px solid var(--primary-color); */
     transition: transform var(--transition-normal);
 }
 

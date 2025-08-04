@@ -1,160 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bonix Construction Services - High-quality construction for residential and commercial projects.">
-    <title>Construction - Bonix Construction</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Construction Services | Bonix</title>
+  <meta name="description" content="Premier construction services by Bonix - Expert builders delivering quality residential, commercial, and industrial construction solutions." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/modern-styles.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+
+  <style>
+    /* Custom styles for construction page */
+    .construction-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(26,32,44,0.9) 0%, rgba(230,57,70,0.8) 100%),
+                  url('https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=1400&q=80') center/cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .construction-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(247,127,0,0.2) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #fff 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .services-showcase {
+      padding: 5rem 1rem;
+      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-item {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(230,57,70,0.15);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 25px rgba(230,57,70,0.3);
+    }
+
+    .service-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .expertise-section {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .expertise-content h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .expertise-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .expertise-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .expertise-list .icon {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .process-section {
+      padding: 5rem 1rem;
+      background: white;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 20px;
+      border: 2px solid #edf2f7;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .process-step:hover::before {
+      opacity: 1;
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+      background: white;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 1.5rem;
+    }
+
+    .cta-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #f77f00 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader">
-            <div class="logo">
-                <img src="logo.png" alt="Bonix Logo">
-            </div>
-            <div class="spinner"></div>
-        </div>
-    </div>
+  <div id="navbar-placeholder"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Bonix Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="dropdown">
-                <a href="services.html" class="dropdown-toggle active">Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="construction.html" class="active">Construction</a></li>
-                    <li><a href="architecture.html">Architecture</a></li>
-                    <li><a href="interior-design.html">Interior Design</a></li>
-                    <li><a href="renovation.html">Renovation</a></li>
-                    <li><a href="project-management.html">Project Management</a></li>
-                    <li><a href="consulting.html">Consulting</a></li>
-                </ul>
-            </li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="contact.html#appointment" class="appointment-btn">Book Appointment</a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
+  <main>
     <!-- Hero Section -->
-    <section class="hero service-hero">
-        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e')">
-            <div class="hero-content">
-                <h1>Construction Services</h1>
-                <p>Building your vision with precision and quality.</p>
-                <a href="contact.html#appointment" class="cta-btn">Get Started</a>
-            </div>
+    <section class="construction-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-hard-hat"></i>
+            Construction Excellence
+          </div>
+          <h1 class="hero-title">
+            Building <span class="hero-highlight">Tomorrow's</span><br>
+            Infrastructure Today
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2.5rem; line-height: 1.6;">
+            From foundation to finish, we deliver exceptional construction services with unmatched quality, 
+            safety standards, and innovative building solutions for every scale of development.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html#contact" class="btn btn-primary btn-lg">
+              <i class="fas fa-phone"></i>
+              Get Free Consultation
+            </a>
+            <a href="index.html#services" class="btn btn-outline btn-lg">
+              <i class="fas fa-tools"></i>
+              Our Services
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Service Details -->
-    <section class="service-details animate" id="service-details">
-        <h2 class="animate-text">Our Construction Expertise</h2>
-        <div class="service-content">
-            <div class="service-text">
-                <p class="animate-text">Bonix Construction delivers top-tier construction services for residential, commercial, and industrial projects. Our team uses cutting-edge technology and sustainable practices to ensure durability and aesthetic excellence.</p>
-                <ul class="animate-text">
-                    <li>Residential homes and apartments</li>
-                    <li>Commercial offices and retail spaces</li>
-                    <li>Industrial facilities and warehouses</li>
-                    <li>Eco-friendly and smart building solutions</li>
-                </ul>
-            </div>
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Construction" class="service-img animate-img">
+    <!-- Services Showcase -->
+    <section class="services-showcase" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Comprehensive Construction Services
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            We provide end-to-end construction solutions tailored to meet your specific requirements 
+            with precision engineering and superior craftsmanship.
+          </p>
         </div>
+
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Residential Construction</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Custom homes, apartments, and residential complexes built with attention to detail and modern living standards.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-city"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Commercial Construction</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Office buildings, retail spaces, and commercial complexes designed for functionality and business success.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Industrial Construction</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Warehouses, manufacturing facilities, and industrial infrastructure built for efficiency and durability.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-hammer"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Renovation & Remodeling</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Transform existing structures with our expert renovation services, breathing new life into old buildings.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-road"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Infrastructure Development</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Roads, bridges, and civil infrastructure built to support community growth and development.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Green Construction</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Sustainable building practices using eco-friendly materials and energy-efficient construction methods.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits animate">
-        <h2 class="animate-text">Why Choose Our Construction Services?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-item animate-text">
-                <h3>Precision Engineering</h3>
-                <p>Every project is executed with meticulous attention to detail.</p>
-            </div>
-            <div class="benefit-item animate-text">
-                <h3>Sustainable Practices</h3>
-                <p>We prioritize eco-friendly materials and methods.</p>
-            </div>
-            <div class="benefit-item animate-text">
-                <h3>Experienced Team</h3>
-                <p>Our builders bring decades of expertise to every site.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Projects -->
-    <section class="related-projects animate">
-        <h2 class="animate-text">Our Construction Projects</h2>
-        <div class="project-gallery">
-            <div class="project-item">
-                <img src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db" alt="Modern Residence">
-                <div class="overlay">
-                    <h3>Modern Residence</h3>
-                    <a href="gallery.html" class="project-btn">View Details</a>
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+      <div class="container">
+        <div class="expertise-grid">
+          <div class="expertise-content">
+            <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 2rem;">
+              Why Choose Bonix Construction?
+            </h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.7;">
+              With over 15 years of experience, we've built a reputation for delivering exceptional construction 
+              results that exceed client expectations while maintaining the highest safety and quality standards.
+            </p>
+            
+            <ul class="expertise-list">
+              <li>
+                <div class="icon">
+                  <i class="fas fa-certificate"></i>
                 </div>
-            </div>
-            <div class="project-item">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Commercial Complex">
-                <div class="overlay">
-                    <h3>Commercial Complex</h3>
-                    <a href="gallery.html" class="project-btn">View Details</a>
+                <div>
+                  <strong>Licensed & Certified</strong><br>
+                  <span style="color: var(--text-secondary);">Fully licensed contractors with industry certifications</span>
                 </div>
-            </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div>
+                  <strong>Safety First Approach</strong><br>
+                  <span style="color: var(--text-secondary);">Comprehensive safety protocols on every construction site</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                  <strong>On-Time Delivery</strong><br>
+                  <span style="color: var(--text-secondary);">Proven track record of completing projects on schedule</span>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div>
+                  <strong>Budget Transparency</strong><br>
+                  <span style="color: var(--text-secondary);">Clear pricing with no hidden costs or surprises</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
+                 alt="Construction Team at Work" 
+                 style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="cta-banner animate">
-        <h2 class="animate-text">Ready to Build?</h2>
-        <p class="animate-text">Contact us to start your construction project.</p>
-        <a href="contact.html#appointment" class="cta-btn animate-text">Get a Quote</a>
+    <!-- Construction Process -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Our Construction Process
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            A systematic approach ensuring quality, efficiency, and client satisfaction at every stage of construction.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 style="margin-bottom: 1rem;">Consultation & Planning</h3>
+            <p style="color: var(--text-secondary);">
+              Initial site assessment, requirement analysis, and detailed construction planning with cost estimation.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 style="margin-bottom: 1rem;">Design & Permits</h3>
+            <p style="color: var(--text-secondary);">
+              Architectural design finalization, engineering drawings, and obtaining necessary construction permits.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 style="margin-bottom: 1rem;">Foundation & Structure</h3>
+            <p style="color: var(--text-secondary);">
+              Site preparation, foundation laying, and structural framework construction with quality materials.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 style="margin-bottom: 1rem;">Construction & Installation</h3>
+            <p style="color: var(--text-secondary);">
+              Complete construction work including electrical, plumbing, HVAC, and all interior installations.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <h3 style="margin-bottom: 1rem;">Quality Inspection</h3>
+            <p style="color: var(--text-secondary);">
+              Thorough quality checks, safety inspections, and compliance verification before handover.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">6</div>
+            <h3 style="margin-bottom: 1rem;">Handover & Support</h3>
+            <p style="color: var(--text-secondary);">
+              Final handover with documentation and ongoing support for maintenance and warranty services.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Bonix</h3>
-                <p>Building dreams with quality and precision since 2010.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>Email: info@bonix.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <p>Address: 123 Builder St, City, Country</p>
-            </div>
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Ready to Start Your Construction?
+          </h2>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+            Get in touch with our expert team for a free consultation and detailed quote for your construction needs.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-white btn-lg">
+              <i class="fas fa-phone"></i>
+              Contact Us Today
+            </a>
+            <a href="mailto:info@bonix.com" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+              <i class="fas fa-envelope"></i>
+              Email Us
+            </a>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Bonix Construction. All rights reserved.</p>
-        </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/component-loader.js"></script>
+  <script src="../../js/animations.js"></script>
+  <script src="../../js/main.js"></script>
 </body>
 </html>

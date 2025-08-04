@@ -191,23 +191,23 @@ class ComponentLoader {
                     </div>
                     <ul class="navbar-menu" id="navbar-menu">
                         <li class="navbar-item">
-                            <a href="#home" class="navbar-link active">Home</a>
+                            <a href="index.html#home" class="navbar-link active">Home</a>
                         </li>
                         <li class="navbar-item">
                             <a href="#services" class="navbar-link">Services</a>
                         </li>
                         <li class="navbar-item">
-                            <a href="#projects" class="navbar-link">Projects</a>
+                            <a href="index.html#projects" class="navbar-link">Projects</a>
                         </li>
                         <li class="navbar-item">
-                            <a href="#about" class="navbar-link">About</a>
+                            <a href="about.html" class="navbar-link">About</a>
                         </li>
                         <li class="navbar-item">
-                            <a href="#contact" class="navbar-link">Contact</a>
+                            <a href="index.html#contact" class="navbar-link">Contact</a>
                         </li>
                     </ul>
                     <div class="navbar-actions">
-                        <a href="#contact" class="btn-primary navbar-cta">Book Consultation</a>
+                        <a href="index.html#contactForm" class="btn-primary navbar-cta">Book Consultation</a>
                         <button class="mobile-menu-toggle" id="mobile-toggle">
                             <span class="hamburger-line"></span>
                             <span class="hamburger-line"></span>

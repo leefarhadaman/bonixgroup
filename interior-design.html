@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interior Design Services | Bonix</title>
+  <meta name="description" content="Professional interior design services by Bonix - Creating beautiful, functional spaces that reflect your style and enhance your living experience." />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/modern-styles.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+
+  <style>
+    /* Custom styles for interior design page */
+    .interior-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(26,32,44,0.9) 0%, rgba(230,57,70,0.8) 100%),
+                  url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80') center/cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .interior-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(247,127,0,0.2) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #fff 0%, #f77f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Portfolio Grid Layout */
+    .portfolio-showcase {
+      padding: 5rem 1rem;
+      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-item {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(230,57,70,0.15);
+    }
+
+    .portfolio-image {
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .portfolio-content {
+      padding: 2rem;
+    }
+
+    .portfolio-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+    }
+
+    .portfolio-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* Services Section */
+    .services-showcase {
+      padding: 5rem 1rem;
+      background: var(--bg-secondary);
+    }
+
+    .services-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 0.75rem 1.5rem;
+      background: white;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab-button.active,
+    .tab-button:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .service-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(230,57,70,0.15);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-color), #f77f00);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .service-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .cta-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, #f77f00 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary-color);
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .services-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="interior-hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-palette"></i>
+            Interior Design Excellence
+          </div>
+          <h1 class="hero-title">
+            Crafting <span class="hero-highlight">Beautiful</span><br>
+            Living Spaces
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2.5rem; line-height: 1.6;">
+            Transform your space into a reflection of your personality with our expert interior design services. 
+            From concept to completion, we create stunning interiors that blend style, functionality, and comfort.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="../../pages/contact.html" class="btn btn-primary btn-lg">
+              <i class="fas fa-phone"></i>
+              Start Your Design
+            </a>
+            <a href="#portfolio" class="btn btn-outline btn-lg">
+              <i class="fas fa-images"></i>
+              View Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Showcase -->
+    <section class="portfolio-showcase" id="portfolio">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Design Portfolio
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            Explore our curated collection of interior design projects showcasing diverse styles 
+            and innovative solutions for every space and lifestyle.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?auto=format&fit=crop&w=800&q=80');">
+              <div class="portfolio-overlay">Residential</div>
+            </div>
+            <div class="portfolio-content">
+              <h3>Modern Living Room</h3>
+              <p>Contemporary design with clean lines, neutral palette, and statement lighting creating an elegant gathering space.</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80');">
+              <div class="portfolio-overlay">Kitchen</div>
+            </div>
+            <div class="portfolio-content">
+              <h3>Gourmet Kitchen</h3>
+              <p>Functional yet beautiful kitchen design featuring premium finishes and smart storage solutions for culinary enthusiasts.</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80');">
+              <div class="portfolio-overlay">Bedroom</div>
+            </div>
+            <div class="portfolio-content">
+              <h3>Master Bedroom Suite</h3>
+              <p>Serene retreat with luxurious textures, calming colors, and thoughtful lighting for ultimate relaxation.</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80');">
+              <div class="portfolio-overlay">Commercial</div>
+            </div>
+            <div class="portfolio-content">
+              <h3>Corporate Office</h3>
+              <p>Professional workspace design balancing productivity and comfort with modern aesthetics and collaborative areas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-showcase" id="services">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Our Design Services
+          </h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            Comprehensive interior design solutions tailored to your unique style, needs, and budget.
+          </p>
+        </div>
+
+        <div class="service-content">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Space Planning</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Optimize your space layout for maximum functionality and flow while maintaining aesthetic appeal.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Color Consultation</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Expert color selection and coordination to create the perfect mood and atmosphere for your space.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-couch"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Furniture Selection</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Curated furniture and decor selection that perfectly complements your style and budget requirements.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Lighting Design</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Strategic lighting solutions that enhance ambiance and functionality throughout your space.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-hammer"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Custom Millwork</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Bespoke built-in solutions and custom cabinetry designed specifically for your space and needs.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-swatchbook"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Material Selection</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Expert guidance on finishes, fabrics, and materials that balance beauty, durability, and budget.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+            Ready to Transform Your Space?
+          </h2>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+            Let our expert designers create a beautiful, functional space that reflects your unique style and enhances your daily life.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html#contact.html" class="btn btn-white btn-lg">
+              <i class="fas fa-phone"></i>
+              Schedule Consultation
+            </a>
+            <a href="mailto:design@bonix.com" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+              <i class="fas fa-envelope"></i>
+              Email Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/component-loader.js"></script>
+  <script src="../../js/animations.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>
